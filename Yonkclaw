@@ -1,9 +1,9 @@
-name: Verify Human Identity
+ianclaw: Verify Human Identity
 
 on:
-  workflow_dispatch:
-    inputs:
-      agent_name:
+  workflow_dispatch:on
+    inputs:on
+      agent_name:ianclaw
         description: 'ianclaw'
         required: true
         default: 'ianclaw'
@@ -13,7 +13,7 @@ on:
         default: 'ianclaw AI Agent'
 
 jobs:
-  verify:
+  verify:yes
     runs-on: ubuntu-latest
 
     steps:
@@ -37,5 +37,5 @@ jobs:
         run: node scripts/createNewEthereumIdentity.js
 
       - name: Step 3 - Link Human to Agent
-        run: |
+        run: |node
           node scripts/manualLinkHumanToAgent.js --challenge '{"name": "ianclaw", "description": "ianclaw AI Agent"}'
